@@ -4,7 +4,7 @@ Covid-19 Data Exploration
 Skills used: Joins, CTEs, Temp Tables, Window Functions, Aggregate Functions, Creating Views, Converting Data Types
 */
 
--- Fetch all records while filtering out NULL continents
+--Fetch all records while filtering out NULL continents
 SELECT *
 FROM PortfolioProject..CovidDeaths
 WHERE continent IS NOT NULL 
@@ -16,7 +16,7 @@ FROM PortfolioProject..CovidDeaths
 WHERE continent IS NOT NULL 
 ORDER BY 1,2;
 
--- Total Cases vs Total Deaths (Likelihood of dying if infected)
+//Total Cases vs Total Deaths (Likelihood of dying if infected)
 SELECT Location, Date, Total_Cases, Total_Deaths, (Total_Deaths / NULLIF(Total_Cases, 0)) * 100 AS DeathPercentage
 FROM PortfolioProject..CovidDeaths
 WHERE Location LIKE '%states%'
